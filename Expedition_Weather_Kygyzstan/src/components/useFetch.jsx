@@ -5,6 +5,7 @@ const useFetch = () => {
     const [loading, setLoading] = useState(true);
   
     useEffect(() => {
+        
       const fetchWeatherData = async () => {
         try {
           const response = await fetch(
@@ -17,9 +18,11 @@ const useFetch = () => {
           console.error('Error fetching weather data:', error);
         }
       };
-  
       fetchWeatherData();
     }, []);
+    
+// PROBLEM SOLVING
+// weatherData is being retunred as an object  ✅ 
 
     return { weatherData, loading }
     

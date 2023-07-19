@@ -1,7 +1,8 @@
+import useFetch from "./useFetch";
 
 const getWeatherButton = () => {
   return (
-    <button>
+    <button onClick={useFetch}>
       Get a weather report...
     </button>
   )
