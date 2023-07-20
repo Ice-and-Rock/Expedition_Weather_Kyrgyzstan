@@ -31,10 +31,10 @@
     ❌ There has be be a better way to do this ??? 
 
 **Aditional CSS**
-- Add a background image and center it
-- improve the colours of each card
-- set a max-width / height
-- add a title for each day row
+- ✅ add a background image and center it
+- ✅ improve the colours of each card
+- ✅ set a max-width / height
+- ✅ add a title for each day row
      style the title using a ```div className="day-title"```
 
 
@@ -43,8 +43,12 @@
 - ❌ all conditional rending works within boundaries high/low on day 2
     - due to .map() not stopping after index 48 ?
         Fixes
-        - added slice before the initial map function to day2
-        - removed the ```if``` statement because it's now redundant now we have slice
+        - added slice before the initial map function to day2 and 3
+        - 
 - ❌ all conditional rending works within boundaries high/low on day 3
+    - ✅ Fixed, due to incorrect indexes being passed
 
-
+**Warnings**
+- ✅ All red warnings set to: 2mm rain, 15km/h Winds
+- ✅ All bold warnings cahnged to 14km/h Winds
+    - day 3 set lower for diplay purposes

@@ -54,12 +54,12 @@ console.log(weatherData)
               if (index % 4 === 0 && index + 4 <= 24) {
                 const hour = (index + 4) % 24;
                 return (
-                  <div key={index} className={`weather-card ${rain > 0 || windSpeed10m > 12 || windSpeed180m > 20 ? 'red-box' : ''}`}>
+                  <div key={index} className={`weather-card ${rain > 2 || windSpeed10m > 15 || windSpeed180m > 15 ? 'red-box' : ''}`}>
                     <p>{hour}:00</p>
                     <p>{temperature} °C</p>
                     <p className={rain > 1 ? 'bold-warning' : ''}>{weatherData.hourly.rain[index]} mm</p>
-                    <p className={windSpeed10m > 12 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_10m[index]} km/h</p>
-                    <p className={windSpeed180m > 15 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_180m[index]} km/h</p>
+                    <p className={windSpeed10m > 14 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_10m[index]} km/h</p>
+                    <p className={windSpeed180m > 14 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_180m[index]} km/h</p>
                   </div>
                 );
               }
@@ -83,14 +83,15 @@ console.log(weatherData)
               const windSpeed180m = weatherData.hourly.windspeed_180m[index + 27]; 
 
               if (index % 4 === 0 ) {
+                // The starting hour
                 const hour = (index + 4) % 24; 
                 return (
-                  <div key={index} className={`weather-card ${rain > 2 || windSpeed10m > 20 || windSpeed180m > 20 ? 'red-box' : ''}`}>
+                  <div key={index} className={`weather-card ${rain > 2 || windSpeed10m > 15 || windSpeed180m > 15 ? 'red-box' : ''}`}>
                     <p>{hour}:00</p>
                     <p>{weatherData.hourly.temperature_2m[index + 27]} °C</p>
                     <p className={rain > 1 ? 'bold-warning' : ''}>{weatherData.hourly.rain[index + 27]} mm</p>
-                    <p className={windSpeed10m > 15 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_10m[index + 27]} km/h</p>
-                    <p className={windSpeed180m > 15 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_180m[index + 27]} km/h</p>
+                    <p className={windSpeed10m > 14 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_10m[index + 27]} km/h</p>
+                    <p className={windSpeed180m > 14 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_180m[index + 27]} km/h</p>
                   </div>
                 );
               }
@@ -117,12 +118,12 @@ console.log(weatherData)
                 // The starting hour
                 const hour = (index + 4) % 24; 
                 return (
-                  <div key={index} className="weather-card">
+                  <div key={index} className={`weather-card ${rain > 2 || windSpeed10m > 15 || windSpeed180m > 15 ? 'red-box' : ''}`}>
                     <p>{hour}:00</p>
                     <p>{weatherData.hourly.temperature_2m[index + 51]} °C</p>
                     <p className={rain > 1 ? 'bold-warning' : ''}>{weatherData.hourly.rain[index + 51]} mm</p>
-                    <p className={windSpeed10m > 12 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_10m[index + 51]} km/h</p>
-                    <p className={windSpeed180m > 15 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_180m[index + 51]} km/h</p>
+                    <p className={windSpeed10m > 10 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_10m[index + 51]} km/h</p>
+                    <p className={windSpeed180m > 12 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_180m[index + 51]} km/h</p>
                   </div>
                 );
               }
