@@ -22,7 +22,7 @@ const App = () => {
     fetchWeatherData();
   }, []);
 
-console.log(weatherData)
+
 
   if (loading) {
     return <div>Loading...</div>;
