@@ -106,7 +106,8 @@ button:focus-visible {
 
 .weather-card.red-box {
   border: 2px solid red;
-  padding: 5px;
+ 
+  
 }
 /* weather-card <p> elements */
 .bold-warning {

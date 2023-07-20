@@ -38,6 +38,13 @@
      style the title using a ```div className="day-title"```
 
 
-
+**Testing**
+- ✅ all conditional rending works within boundaries high/low on day 1
+- ❌ all conditional rending works within boundaries high/low on day 2
+    - due to .map() not stopping after index 48 ?
+        Fixes
+        - added slice before the initial map function to day2
+        - removed the ```if``` statement because it's now redundant now we have slice
+- ❌ all conditional rending works within boundaries high/low on day 3
 
 

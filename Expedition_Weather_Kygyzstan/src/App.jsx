@@ -22,6 +22,8 @@ const App = () => {
     fetchWeatherData();
   }, []);
 
+console.log(weatherData)
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -52,7 +54,7 @@ const App = () => {
               if (index % 4 === 0 && index + 4 <= 24) {
                 const hour = (index + 4) % 24;
                 return (
-                  <div key={index} className={`weather-card ${rain > 2 || windSpeed10m > 30 || windSpeed180m > 30 ? 'red-box' : ''}`}>
+                  <div key={index} className={`weather-card ${rain > 0 || windSpeed10m > 12 || windSpeed180m > 20 ? 'red-box' : ''}`}>
                     <p>{hour}:00</p>
                     <p>{temperature} °C</p>
                     <p className={rain > 1 ? 'bold-warning' : ''}>{weatherData.hourly.rain[index]} mm</p>
@@ -75,20 +77,20 @@ const App = () => {
               <p>Wind Speed (10m)</p>
               <p>Wind Speed (180m)</p>
             </div>
-            {weatherData.hourly.temperature_2m.map((temperature, index) => {
-              const rain = weatherData.hourly.rain[index];
-              const windSpeed10m = weatherData.hourly.windspeed_10m[index];
-              const windSpeed180m = weatherData.hourly.windspeed_180m[index]; 
+            {weatherData.hourly.temperature_2m.slice(27, 48).map((temperature, index) => {
+              const rain = weatherData.hourly.rain[index + 27];
+              const windSpeed10m = weatherData.hourly.windspeed_10m[index + 27];
+              const windSpeed180m = weatherData.hourly.windspeed_180m[index + 27]; 
 
-              if (index % 4 === 0 && index + 28 <= 48) {
-                const hour = (index + 4) % 24; // Adjusted the starting hour for Day 2
+              if (index % 4 === 0 ) {
+                const hour = (index + 4) % 24; 
                 return (
-                  <div key={index} className={`weather-card ${rain > 2 || windSpeed10m > 30 || windSpeed180m > 30 ? 'red-box' : ''}`}>
+                  <div key={index} className={`weather-card ${rain > 2 || windSpeed10m > 20 || windSpeed180m > 20 ? 'red-box' : ''}`}>
                     <p>{hour}:00</p>
-                    <p>{weatherData.hourly.temperature_2m[index + 28]} °C</p>
-                    <p className={rain > 1 ? 'bold-warning' : ''}>{weatherData.hourly.rain[index + 28]} mm</p>
-                    <p className={windSpeed10m > 12 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_10m[index + 28]} km/h</p>
-                    <p className={windSpeed180m > 15 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_180m[index + 28]} km/h</p>
+                    <p>{weatherData.hourly.temperature_2m[index + 27]} °C</p>
+                    <p className={rain > 1 ? 'bold-warning' : ''}>{weatherData.hourly.rain[index + 27]} mm</p>
+                    <p className={windSpeed10m > 15 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_10m[index + 27]} km/h</p>
+                    <p className={windSpeed180m > 15 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_180m[index + 27]} km/h</p>
                   </div>
                 );
               }
@@ -106,20 +108,21 @@ const App = () => {
               <p>Wind Speed (10m)</p>
               <p>Wind Speed (180m)</p>
             </div>
-            {weatherData.hourly.temperature_2m.map((temperature, index) => {
-              const rain = weatherData.hourly.rain[index];
-              const windSpeed10m = weatherData.hourly.windspeed_10m[index];
-              const windSpeed180m = weatherData.hourly.windspeed_180m[index]; 
+            {weatherData.hourly.temperature_2m.slice(51, 72).map((temperature, index) => {
+              const rain = weatherData.hourly.rain[index + 51];
+              const windSpeed10m = weatherData.hourly.windspeed_10m[index + 51];
+              const windSpeed180m = weatherData.hourly.windspeed_180m[index + 51]; 
 
-              if (index % 4 === 0 && index + 52 <= 72) {
-                const hour = (index + 4) % 24; // Adjusted the starting hour for Day 3
+              if (index % 4 === 0 ) {
+                // The starting hour
+                const hour = (index + 4) % 24; 
                 return (
                   <div key={index} className="weather-card">
                     <p>{hour}:00</p>
-                    <p>{weatherData.hourly.temperature_2m[index + 8]} °C</p>
-                    <p className={rain > 1 ? 'bold-warning' : ''}>{weatherData.hourly.rain[index + 8]} mm</p>
-                    <p className={windSpeed10m > 12 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_10m[index + 8]} km/h</p>
-                    <p className={windSpeed180m > 15 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_180m[index + 8]} km/h</p>
+                    <p>{weatherData.hourly.temperature_2m[index + 51]} °C</p>
+                    <p className={rain > 1 ? 'bold-warning' : ''}>{weatherData.hourly.rain[index + 51]} mm</p>
+                    <p className={windSpeed10m > 12 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_10m[index + 51]} km/h</p>
+                    <p className={windSpeed180m > 15 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_180m[index + 51]} km/h</p>
                   </div>
                 );
               }

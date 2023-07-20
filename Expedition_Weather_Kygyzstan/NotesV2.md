@@ -9,4 +9,7 @@ Changes and things learned:
     - ❌ this will change everything inside the className
 - establish new in-line style to be rendered
     - needs to be inside back ticks ` ` as it's dynamic
-    - 
+    
+- had to change all .map() idexes
+    - map starts at 0, not 1
+    - the last number in the array is 71 not 72. Doh!
