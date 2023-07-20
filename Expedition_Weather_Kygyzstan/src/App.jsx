@@ -30,7 +30,8 @@ console.log(weatherData)
 
   return (
     <div className="weather-app">
-    <h2>Rebecca and Nick - Kygystan Trip</h2>
+    <h2>Rebecca and Nick - Kygystan climbing Trip</h2>
+    <h3></h3>
       <h1>Weather App</h1>
       {weatherData && (
         <div className="three-day-weather"> 
