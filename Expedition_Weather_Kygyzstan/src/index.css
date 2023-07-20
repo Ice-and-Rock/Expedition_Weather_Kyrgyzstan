@@ -4,8 +4,10 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(9, 7, 7, 0.87);
+  background-color: #866161;
+  background-image: url('../public/mountains_bg.jpg');
+  background-position: center; 
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -71,18 +73,49 @@ button:focus-visible {
   }
 }
 
+.weather-app {
+  text-align: center;
+  padding: 20px;
+}
+
+.day-title {
+  font-weight: 800;
+  font-size: x-large;
+}
+
 .weather-grid {
-  display: grid;
-  grid-template-columns: repeat(
-    5,
-    1fr
-  ); /* Will only show 5 cards per line */
-  gap: 20px;
-  color: #1a1a1a;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .weather-card {
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 8px;
+  min-width: 83px;
+  max-height: 210px;
+  margin: 3px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: left;
+  background-color:rgb(236, 153, 123);
+}
+
+.weather-card.header {
+  font-weight: bold;
+}
+
+.weather-card.red-box {
+  border: 2px solid red;
+  padding: 5px;
+}
+/* weather-card <p> elements */
+.bold-warning {
+  font-weight: 900;
+}
+
+/* Adjust styling for mobile devices */
+@media screen and (max-width: 768px) {
+  .weather-card {
+    width: 100%;
+  }
 }
