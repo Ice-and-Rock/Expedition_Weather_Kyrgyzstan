@@ -99,6 +99,9 @@ button:focus-visible {
   text-align: left;
   background-color:rgb(236, 153, 123);
 }
+  .weather-card:hover {
+    box-shadow: 7px 7px 27px #483b31, 7px 7px 7px #704c31;
+  }
 
 .weather-card.header {
   font-weight: bold;

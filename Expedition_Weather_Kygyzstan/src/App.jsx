@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [buttonClicked, setButtonClicked] = useState(false);
+
 
   useEffect(() => {
     const fetchWeatherData = async () => {
@@ -24,14 +26,19 @@ const App = () => {
 
 
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+
 
   return (
     <div className="weather-app">
     <h2>Rebecca and Nick - Kygystan climbing Trip</h2>
-    <h3></h3>
+    <h3>** Ak-su Region Base-camp **</h3>
+    {!buttonClicked && (
+      <button onClick={() => setButtonClicked(true)}>Get Weather Report</button>
+    )}
+    {buttonClicked && loading ? (
+      <div>Loading...</div>
+    ) : buttonClicked && weatherData ? (
+    <>
       <h1>Weather App</h1>
       {weatherData && (
         <div className="three-day-weather"> 
@@ -127,12 +134,17 @@ const App = () => {
                     <p className={windSpeed180m > 12 ? 'bold-warning' : ''}>{weatherData.hourly.windspeed_180m[index + 51]} km/h</p>
                   </div>
                 );
+              } else {
+                return null;
               }
-              return null;
             })}
           </div>
         </div>
-      )}
+    )}
+    </>
+    
+    ) : null }
+    
     </div>
   );
 };
