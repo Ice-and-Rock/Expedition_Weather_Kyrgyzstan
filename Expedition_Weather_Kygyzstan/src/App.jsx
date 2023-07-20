@@ -8,6 +8,7 @@ const App = () => {
 
 
   useEffect(() => {
+    if (buttonClicked) {
     const fetchWeatherData = async () => {
       try {
         const response = await fetch(
@@ -22,9 +23,10 @@ const App = () => {
     };
 
     fetchWeatherData();
-  }, []);
+    }
+  }, [buttonClicked]);
 
-
+console.log(weatherData)
 
 
 
@@ -32,6 +34,7 @@ const App = () => {
     <div className="weather-app">
     <h2>Rebecca and Nick - Kygystan climbing Trip</h2>
     <h3>** Ak-su Region Base-camp **</h3>
+    <h4>lat = 39.8443 , long = 70.316</h4>
     {!buttonClicked && (
       <button onClick={() => setButtonClicked(true)}>Get Weather Report</button>
     )}
