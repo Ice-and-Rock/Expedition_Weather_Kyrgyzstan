@@ -5,17 +5,17 @@ import Weather from "./Weather.jsx";
 const HomePage = () => {
     const [showWeather, setShowWeather] = useState(false)
 
-    const { 
-    weatherData: fetchedData,
-    loading,
-} = useFetch();
+    const { weatherData, loading } = useFetch();
 
     const handleClick = () => {
         setShowWeather(true)
 }
 
 
+console.log(loading + "loading on homepage")
+
 console.log(showWeather)
+// console.log(weatherData)
 
 
 return (
@@ -25,7 +25,7 @@ return (
 
         <button onClick={handleClick}>Get a weather report</button>
 
-        {fetchedData && <Weather fetchedData={fetchedData} loading={loading} title="Here is today's weather..."/>}
+        {weatherData && <Weather weatherDataObj={weatherData} loading={loading}  />}
     </div>
 )
 }

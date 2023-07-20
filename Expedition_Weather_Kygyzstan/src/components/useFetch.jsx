@@ -22,8 +22,10 @@ const useFetch = () => {
     }, []);
     
 // PROBLEM SOLVING
-// weatherData is being retunred as an object  ✅ 
-
+// weatherData is being returned as an object  ✅ 
+// loading is being returned as boolean ✅
+    // console.log(loading + "loading type")
+    
     return { weatherData, loading }
     
 }
