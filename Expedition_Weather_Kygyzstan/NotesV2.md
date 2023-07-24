@@ -1,6 +1,6 @@
 Changes and things learned:
 
-- Conditional rendering on CSS if certain data criteria is met
+- Conditional rendering on CSS ClassNames if certain data criteria is met
 
 - establish a new variable for bit of data [index] inside .map() function
     ```const rain = weatherData.hourly.rain[index]```
