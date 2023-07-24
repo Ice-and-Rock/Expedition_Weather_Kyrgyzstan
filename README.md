@@ -4,7 +4,7 @@ https://rebecca-expedition-kyrgystan.netlify.app/
 
 ---
 
-My partner went on a expedition to a mountain range in Kygystan but finding reliable weather data for the area was difficult.
+My partner went on a expedition to a mountain range in Kyrgystan but finding reliable weather data for the area was difficult.
 
 So, I build her a custom app for her and her team to use in order to stay safe.
 
