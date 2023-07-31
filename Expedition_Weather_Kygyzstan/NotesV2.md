@@ -15,3 +15,5 @@ Changes and things learned:
 - had to change all .map() idexes
     - map starts at 0, not 1
     - the last number in the array is 71 not 72. Doh!
+
+- Change CSS to me formatted for mobile app using #media-queries
