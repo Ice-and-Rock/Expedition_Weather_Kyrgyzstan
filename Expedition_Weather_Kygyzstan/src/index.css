@@ -1,10 +1,10 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 300;
 
   color-scheme: light dark;
-  color: rgba(9, 7, 7, 0.87);
+  color: rgba(0, 17, 199, 0.87);
   background-color: #866161;
   background-image: url('../public/mountains_bg.jpg');
   background-position: center; 
@@ -90,6 +90,7 @@ button:focus-visible {
 }
 
 .weather-card {
+ 
   min-width: 83px;
   max-height: 210px;
   margin: 3px;
@@ -119,7 +120,31 @@ button:focus-visible {
 
 /* Adjust styling for mobile devices */
 @media screen and (max-width: 768px) {
+  #root {
+    margin: 0;
+    padding: 5%;
+    
+  }
+  .weather-app{
+    padding: 0;
+  }
+  .weather-grid {
+    /* width: 100% ; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
   .weather-card {
-    width: 100%;
+    /* width: 20%; */
+    font-size: 0.4em;
+    min-width: 20px;
+    margin: 1px;
+    padding: 1%;
+  }
+ 
+  .day-title {
+    font-size: large;
   }
 }
