@@ -33,7 +33,7 @@ console.log(weatherData)
   return (
     <div className="weather-app">
     <h2>Rebecca and Team - Kygystan climbing Trip</h2>
-    <h3>** Ak-su Region Base-camp **</h3>
+    <h3>*** Ak-su Region Base-camp ***</h3>
     <h4>lat = 39.8443 , long = 70.316</h4>
     {!buttonClicked && (
       <button onClick={() => setButtonClicked(true)}>Get Weather Report</button>
